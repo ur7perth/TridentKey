@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "id": "autotrident",
+  "id": "tridentkey",
   "version": "${version}",
-  "name": "Trident Key",
+  "name": "TridentKey",
   "description": "Press any key u choose to transform trident in ur inv.",
   "authors": ["TridentKey Author"],
   "license": "MIT",
