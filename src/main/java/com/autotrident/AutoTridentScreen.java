@@ -1,4 +1,4 @@
-Enterpackage com.autotrident;
+package com.autotrident;
 
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.Screen;
