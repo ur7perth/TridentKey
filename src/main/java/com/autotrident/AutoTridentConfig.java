@@ -1,4 +1,4 @@
-Enterpackage com.autotrident;
+package com.autotrident;
 
 import net.fabricmc.loader.api.FabricLoader;
 import org.lwjgl.glfw.GLFW;
