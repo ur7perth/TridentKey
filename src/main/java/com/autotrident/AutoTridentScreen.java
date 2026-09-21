@@ -15,7 +15,7 @@ public class AutoTridentScreen extends Screen {
     private long lastClick = 0;
 
     public AutoTridentScreen() {
-        super(Text.literal("Auto Trident"));
+        super(Text.literal("TridentKey"));
     }
 
     private int boxX() { return this.width / 2 - BOX / 2; }
@@ -34,15 +34,21 @@ public class AutoTridentScreen extends Screen {
         int bx = boxX();
         int by = boxY();
 
-        context.drawCenteredTextWithShadow(this.textRenderer, "Auto Trident", cx, by - 40, 0xFFFFFF);
+        context.drawCenteredTextWithShadow(this.textRenderer, "TridentKey", cx, by - 20, 0xFFFFFF);
 
-        String status = AutoTridentConfig.enabled ? "Auto Throw: ON" : "Auto Throw: OFF";
-        int statusColor = AutoTridentConfig.enabled ? 0x55FF55 : 0xFF5555;
-        context.drawCenteredTextWithShadow(this.textRenderer, status, cx, by - 24, statusColor);
+        // لون الإطار: أصفر = تغيير الحرف، أخضر = شغال، أحمر = مطفي
+        int border;
+        if (listening) {
+            border = 0xFFFFFF55;
+        } else if (AutoTridentConfig.enabled) {
+            border = 0xFF55FF55;
+        } else {
+            border = 0xFFFF5555;
+        }
 
         // المربع
         context.fill(bx, by, bx + BOX, by + BOX, 0xCC000000);
-        context.drawBorder(bx, by, BOX, BOX, listening ? 0xFFFFFF55 : 0xFFFFFFFF);
+        context.drawBorder(bx, by, BOX, BOX, border);
 
         // الحرف
         String text = listening ? "?" : keyName();
@@ -58,9 +64,7 @@ public class AutoTridentScreen extends Screen {
         context.drawCenteredTextWithShadow(this.textRenderer,
                 "Click once: change key", cx, by + BOX + 10, 0xAAAAAA);
         context.drawCenteredTextWithShadow(this.textRenderer,
-                "Double click: turn auto throw ON / OFF", cx, by + BOX + 22, 0xAAAAAA);
-        context.drawCenteredTextWithShadow(this.textRenderer,
-                "In game: press the key to switch to trident", cx, by + BOX + 34, 0xAAAAAA);
+                "In game: press the key to switch to trident", cx, by + BOX + 22, 0xAAAAAA);
     }
 
     @Override
