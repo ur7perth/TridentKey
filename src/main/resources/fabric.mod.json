@@ -1,0 +1,19 @@
+Enter{
+  "schemaVersion": 1,
+  "id": "autotrident",
+  "version": "${version}",
+  "name": "Trident Key",
+  "description": "Press any key u choose to transform trident in ur inv.",
+  "authors": ["TridentKey Author"],
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "client": ["com.autotrident.AutoTridentClient"]
+  },
+  "depends": {
+    "fabricloader": ">=0.15.11",
+    "minecraft": ">=1.21 <1.21.2",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
