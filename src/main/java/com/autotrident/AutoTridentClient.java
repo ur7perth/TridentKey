@@ -1,4 +1,4 @@
-Enterpackage com.autotrident;
+package com.autotrident;
 
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandManager;
